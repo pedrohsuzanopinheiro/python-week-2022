@@ -7,7 +7,13 @@ client = TestClient(api)
 def test_create_beer():
     response = client.post(
         "/beers",
-        json={"name": "Skol", "style": "KornPA", "flavor": 1, "image": 1, "cost": 2},
+        json={
+            "name": "Skol",
+            "style": "KornPA",
+            "flavor": 1,
+            "image": 1,
+            "cost": 2,
+        },
     )
     assert response.status_code == 201
     result = response.json()
